@@ -1,0 +1,28 @@
+# Git相关
+.git
+.gitignore
+
+# 文档文件
+*.md
+!README.md
+
+# 开发工具
+.vscode
+.idea
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 日志文件
+*.log
+
+# Docker文件（避免递归）
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Node modules（如果有）
+node_modules
+npm-debug.log

@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toast演示 - 智慧学习平台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .demo-container {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 3rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .demo-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #2d3748;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .demo-section {
+            margin-bottom: 3rem;
+        }
+        
+        .demo-section h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+        
+        .icon-showcase {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .icon-item {
+            text-align: center;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 8px;
+        }
+        
+        .icon-item svg {
+            display: block;
+            margin: 0 auto 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <svg width="32" height="32" viewBox="0 0 32 32" style="vertical-align: middle; margin-right: 8px;">
+                    <circle cx="16" cy="16" r="14" fill="url(#gradient1)"/>
+                    <<!-- 涔︽湰鍥炬爣 -->`n                    <path d="M10 12 L10 22 L22 22 L22 12 Z" fill="none" stroke="white" stroke-width="1.5"/>`n                    <path d="M16 12 L16 22" stroke="white" stroke-width="1.5"/>`n                    <path d="M10 12 Q16 14 22 12" fill="none" stroke="white" stroke-width="1.5"/>`n                    <defs>
+                        <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#667eea"/>
+                            <stop offset="100%" style="stop-color:#764ba2"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <h1>智慧学习</h1>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">返回首页</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="demo-container">
+        <h1 class="demo-title">🎨 交互演示中心</h1>
+        
+        <!-- Toast演示 -->
+        <div class="demo-section">
+            <h3>📢 Toast提示系统演示</h3>
+            <p style="color: #718096; margin-bottom: 1.5rem;">点击下方按钮查看不同类型的Toast提示效果</p>
+            <div class="demo-grid">
+                <button class="btn btn-primary" onclick="showToast('✅ 操作成功！数据已保存', 'success', 3000)">
+                    成功提示
+                </button>
+                <button class="btn btn-primary" style="background: linear-gradient(135deg, #f56565, #c53030);" onclick="showToast('❌ 操作失败，请检查网络连接后重试', 'error', 4000)">
+                    错误提示
+                </button>
+                <button class="btn btn-primary" style="background: linear-gradient(135deg, #ed8936, #dd6b20);" onclick="showToast('⚠️ 请先完成上一步操作', 'warning', 3000)">
+                    警告提示
+                </button>
+                <button class="btn btn-primary" style="background: linear-gradient(135deg, #4299e1, #2b6cb0);" onclick="showToast('ℹ️ 正在加载数据，请稍候...', 'info', 2000)">
+                    信息提示
+                </button>
+            </div>
+        </div>
+
+        <!-- 复杂Toast演示 -->
+        <div class="demo-section">
+            <h3>🚀 复杂交互演示</h3>
+            <p style="color: #718096; margin-bottom: 1.5rem;">模拟真实场景的多步骤Toast提示</p>
+            <div class="demo-grid">
+                <button class="btn btn-primary" onclick="demoMultipleToasts()">
+                    多步骤提示
+                </button>
+                <button class="btn btn-primary" onclick="demoLongMessage()">
+                    长文本提示
+                </button>
+                <button class="btn btn-primary" onclick="demoQuickToasts()">
+                    快速提示
+                </button>
+            </div>
+        </div>
+
+        <!-- SVG图标展示 -->
+        <div class="demo-section">
+            <h3>🎨 SVG图标展示</h3>
+            <div class="icon-showcase">
+                <div class="icon-item">
+                    <svg width="80" height="80" viewBox="0 0 80 80">
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#667eea"/>
+                                <stop offset="100%" style="stop-color:#764ba2"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="40" cy="40" r="35" fill="url(#grad1)"/>
+                        <circle cx="40" cy="25" r="12" fill="white"/>
+                        <path d="M 15 65 Q 15 45 40 45 Q 65 45 65 65" fill="white"/>
+                    </svg>
+                    <p>用户头像</p>
+                </div>
+
+                <div class="icon-item">
+                    <svg width="80" height="80" viewBox="0 0 80 80">
+                        <defs>
+                            <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#f093fb"/>
+                                <stop offset="100%" style="stop-color:#f5576c"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="40" cy="40" r="35" fill="url(#grad2)"/>
+                        <path d="M25 40 L35 50 L55 30" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <p>完成标记</p>
+                </div>
+
+                <div class="icon-item">
+                    <svg width="80" height="80" viewBox="0 0 80 80">
+                        <defs>
+                            <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4facfe"/>
+                                <stop offset="100%" style="stop-color:#00f2fe"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="40" cy="40" r="35" fill="url(#grad3)"/>
+                        <text x="40" y="55" text-anchor="middle" font-size="40" fill="white">📚</text>
+                    </svg>
+                    <p>课程图标</p>
+                </div>
+
+                <div class="icon-item">
+                    <svg width="80" height="80" viewBox="0 0 80 80">
+                        <defs>
+                            <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#fa709a"/>
+                                <stop offset="100%" style="stop-color:#fee140"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="40" cy="40" r="35" fill="url(#grad4)"/>
+                        <path d="M40 20 L40 60 M40 20 L50 30 M40 20 L30 30" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <p>上传图标</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 按钮样式展示 -->
+        <div class="demo-section">
+            <h3>🎯 按钮交互演示</h3>
+            <p style="color: #718096; margin-bottom: 1.5rem;">点击按钮查看实际的交互反馈</p>
+            <div class="demo-grid">
+                <button class="btn btn-primary">立即开始 →</button>
+                <button class="btn btn-primary">立即学习 →</button>
+                <button class="btn btn-primary">继续学习 →</button>
+                <button class="btn btn-primary">查看详情 →</button>
+                <button class="btn btn-primary">加入收藏 ⭐</button>
+                <button class="btn btn-primary">制定计划 🎯</button>
+            </div>
+        </div>
+
+        <!-- 表情图标展示 -->
+        <div class="demo-section">
+            <h3>😊 表情图标展示</h3>
+            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; font-size: 3rem;">
+                <span title="编程">💻</span>
+                <span title="Python">🐍</span>
+                <span title="设计">🎨</span>
+                <span title="火箭">🚀</span>
+                <span title="工具">🔧</span>
+                <span title="机器人">🤖</span>
+                <span title="大脑">🧠</span>
+                <span title="图表">📊</span>
+                <span title="闪电">⚡</span>
+                <span title="地球">🌐</span>
+                <span title="星星">✨</span>
+                <span title="奖杯">🏆</span>
+            </div>
+        </div>
+
+        <!-- 提示信息 -->
+        <div style="background: #d1ecf1; color: #0c5460; padding: 1.5rem; border-radius: 8px; border: 2px solid #bee5eb; margin-top: 2rem;">
+            <h4 style="margin-bottom: 0.5rem;">💡 使用提示</h4>
+            <ul style="margin: 0; padding-left: 1.5rem;">
+                <li>Toast提示会在右上角显示，自动消失</li>
+                <li>可以同时显示多个Toast，自动堆叠</li>
+                <li>所有SVG图标都是矢量的，可以任意缩放</li>
+                <li>表情图标在所有设备上显示一致</li>
+                <li>按钮点击会触发相应的Toast提示</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer" style="margin-top: 3rem;">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 智慧学习平台 版权所有 | <a href="index.html" style="color: white;">返回首页</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // 多步骤Toast演示
+        function demoMultipleToasts() {
+            showToast('📤 开始上传文件...', 'info', 2000);
+            setTimeout(() => {
+                showToast('⏳ 正在处理文件...', 'info', 2000);
+            }, 1000);
+            setTimeout(() => {
+                showToast('✅ 上传成功！文件已保存', 'success', 3000);
+            }, 2500);
+        }
+
+        // 长文本Toast演示
+        function demoLongMessage() {
+            showToast('📝 你提交的学习计划已经生成完成，包含了详细的学习路径、推荐课程和时间安排。请查看邮箱获取完整的学习计划文档！', 'success', 5000);
+        }
+
+        // 快速Toast演示
+        function demoQuickToasts() {
+            showToast('1️⃣ 第一步完成', 'success', 1500);
+            setTimeout(() => showToast('2️⃣ 第二步完成', 'success', 1500), 500);
+            setTimeout(() => showToast('3️⃣ 第三步完成', 'success', 1500), 1000);
+            setTimeout(() => showToast('🎉 全部完成！', 'success', 2000), 1500);
+        }
+    </script>
+</body>
+</html>

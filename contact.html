@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 智慧学习平台</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>智慧学习</h1>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="courses.html">课程中心</a></li>
+                <li><a href="plan.html">学习计划</a></li>
+                <li><a href="resources.html">学习资源</a></li>
+                <li><a href="profile.html">个人中心</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="contact.html" class="active">联系我们</a></li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>联系我们</h1>
+            <p>我们随时准备为你提供帮助</p>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>邮箱联系</h3>
+                    <p>info@smartlearn.com</p>
+                    <p class="contact-desc">我们会在24小时内回复</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <h3>电话咨询</h3>
+                    <p>400-888-8888</p>
+                    <p class="contact-desc">工作日 9:00-18:00</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>公司地址</h3>
+                    <p>北京市朝阳区科技园</p>
+                    <p class="contact-desc">欢迎预约来访</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">💬</div>
+                    <h3>在线客服</h3>
+                    <p>即时聊天支持</p>
+                    <p class="contact-desc">7×24小时在线</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系表单 -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>发送消息</h2>
+                    <p>填写以下表单，我们会尽快与你联系</p>
+                </div>
+                
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">姓名 <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" placeholder="请输入你的姓名" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">邮箱 <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="请输入你的邮箱" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">电话</label>
+                            <input type="tel" id="phone" name="phone" placeholder="请输入你的电话（可选）">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">主题 <span class="required">*</span></label>
+                            <select id="subject" name="subject" required>
+                                <option value="">请选择咨询主题</option>
+                                <option value="course">课程咨询</option>
+                                <option value="technical">技术支持</option>
+                                <option value="cooperation">商务合作</option>
+                                <option value="suggestion">意见建议</option>
+                                <option value="other">其他问题</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">消息内容 <span class="required">*</span></label>
+                        <textarea id="message" name="message" rows="6" placeholder="请详细描述你的问题或需求..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="agree" name="agree" required>
+                            <span>我已阅读并同意<a href="#">隐私政策</a>和<a href="#">服务条款</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">发送消息</button>
+                </form>
+
+                <div id="formMessage" class="form-message"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ常见问题 -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">常见问题</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>如何开始学习课程？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>注册账号后，浏览课程中心选择适合你的课程，点击"立即学习"即可开始。我们建议先完成学习计划评估，让AI为你推荐最适合的学习路径。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>课程费用如何收取？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>我们提供单课程购买和会员订阅两种模式。单课程价格从199元到599元不等，会员可无限制学习所有课程。我们还定期提供优惠活动和限时免费课程。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>是否提供学习证书？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>完成课程学习并通过考核后，你将获得由智慧学习平台颁发的电子证书。该证书可添加到你的简历和LinkedIn档案中，证明你的学习成果。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>学习遇到问题怎么办？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>我们提供多种支持渠道：课程讨论区可与其他学习者交流，在线客服提供即时帮助，还可以预约导师一对一辅导。所有问题都会得到及时解答。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>课程内容会更新吗？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>我们的课程内容会根据技术发展和行业需求持续更新。已购买课程的学员可以免费获取所有更新内容，确保学到的知识始终与时俱进。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>是否提供就业指导服务？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>我们为学员提供简历优化、面试技巧培训、模拟面试等就业服务。部分课程还包含企业内推机会，帮助学员顺利实现职业转型。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 地图区域 -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">找到我们</h2>
+            <div class="map-container">
+                <!-- SVG 城市地图插画：北京朝阳科技园 -->
+                <svg width="100%" viewBox="0 0 880 400" style="border-radius:10px;display:block" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="mapBg" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#e8f4fd"/>
+                            <stop offset="100%" style="stop-color:#d0e8f5"/>
+                        </linearGradient>
+                        <filter id="shadow">
+                            <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+                        </filter>
+                    </defs>
+                    <!-- 地图背景 -->
+                    <rect width="880" height="400" fill="url(#mapBg)" rx="10"/>
+
+                    <!-- 绿化带/公园 -->
+                    <rect x="0" y="0" width="880" height="400" fill="#e8f5e9" rx="10"/>
+                    <rect x="60" y="50" width="220" height="120" rx="6" fill="#c8e6c9"/>
+                    <rect x="600" y="260" width="200" height="110" rx="6" fill="#c8e6c9"/>
+                    <rect x="350" y="20" width="140" height="80" rx="6" fill="#c8e6c9"/>
+                    <!-- 公园树点 -->
+                    <circle cx="120" cy="90" r="12" fill="#66bb6a" opacity=".7"/>
+                    <circle cx="150" cy="80" r="10" fill="#66bb6a" opacity=".6"/>
+                    <circle cx="185" cy="95" r="11" fill="#66bb6a" opacity=".7"/>
+                    <circle cx="220" cy="85" r="9" fill="#66bb6a" opacity=".6"/>
+                    <circle cx="248" cy="100" r="10" fill="#66bb6a" opacity=".7"/>
+                    <circle cx="660" cy="295" r="11" fill="#66bb6a" opacity=".6"/>
+                    <circle cx="695" cy="308" r="10" fill="#66bb6a" opacity=".7"/>
+                    <circle cx="730" cy="290" r="12" fill="#66bb6a" opacity=".6"/>
+                    <circle cx="765" cy="300" r="9" fill="#66bb6a" opacity=".7"/>
+
+                    <!-- 主干道 (水平) -->
+                    <rect x="0" y="185" width="880" height="28" fill="#b0bec5"/>
+                    <rect x="0" y="190" width="880" height="18" fill="#cfd8dc"/>
+                    <!-- 道路中心线 -->
+                    <line x1="0" y1="199" x2="880" y2="199" stroke="white" stroke-width="1.5" stroke-dasharray="20,12"/>
+
+                    <!-- 主干道 (垂直) -->
+                    <rect x="395" y="0" width="28" height="400" fill="#b0bec5"/>
+                    <rect x="400" y="0" width="18" height="400" fill="#cfd8dc"/>
+                    <line x1="409" y1="0" x2="409" y2="400" stroke="white" stroke-width="1.5" stroke-dasharray="20,12"/>
+
+                    <!-- 次干道 (水平) -->
+                    <rect x="0" y="300" width="880" height="16" fill="#cfd8dc"/>
+                    <rect x="0" y="80" width="880" height="16" fill="#cfd8dc"/>
+                    <!-- 次干道 (垂直) -->
+                    <rect x="200" y="0" width="16" height="400" fill="#cfd8dc"/>
+                    <rect x="640" y="0" width="16" height="400" fill="#cfd8dc"/>
+
+                    <!-- 街区建筑群 (左上) -->
+                    <rect x="30" y="105" width="55" height="70" rx="4" fill="#bdc3c7" filter="url(#shadow)"/>
+                    <rect x="35" y="110" width="45" height="60" rx="3" fill="#90a4ae"/>
+                    <rect x="40" y="115" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="52" y="115" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="64" y="115" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="40" y="130" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="52" y="130" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="64" y="130" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="40" y="145" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="52" y="145" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+
+                    <!-- 街区建筑群 (右上) -->
+                    <rect x="450" y="100" width="70" height="80" rx="4" fill="#bdc3c7" filter="url(#shadow)"/>
+                    <rect x="455" y="105" width="60" height="70" rx="3" fill="#78909c"/>
+                    <rect x="460" y="112" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="473" y="112" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="486" y="112" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="499" y="112" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="460" y="127" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="473" y="127" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="486" y="127" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="499" y="127" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="460" y="142" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="473" y="142" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+
+                    <!-- 科技园大楼 (右下，醒目) -->
+                    <rect x="450" y="220" width="100" height="70" rx="5" fill="#667eea" filter="url(#shadow)"/>
+                    <!-- 玻璃幕墙网格 -->
+                    <line x1="467" y1="220" x2="467" y2="290" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+                    <line x1="484" y1="220" x2="484" y2="290" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+                    <line x1="501" y1="220" x2="501" y2="290" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+                    <line x1="518" y1="220" x2="518" y2="290" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+                    <line x1="535" y1="220" x2="535" y2="290" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+                    <line x1="450" y1="237" x2="550" y2="237" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+                    <line x1="450" y1="254" x2="550" y2="254" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+                    <line x1="450" y1="271" x2="550" y2="271" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+                    <!-- 楼牌 -->
+                    <rect x="458" y="278" width="84" height="14" rx="3" fill="rgba(255,255,255,.25)"/>
+                    <text x="500" y="289" text-anchor="middle" font-size="8" font-weight="bold" fill="white">智慧学习科技园</text>
+                    <!-- 楼顶天线 -->
+                    <line x1="500" y1="220" x2="500" y2="204" stroke="#667eea" stroke-width="2"/>
+                    <circle cx="500" cy="202" r="3" fill="#ffd166"/>
+
+                    <!-- 左下街区 -->
+                    <rect x="30" y="220" width="80" height="60" rx="4" fill="#bdc3c7" filter="url(#shadow)"/>
+                    <rect x="35" y="225" width="70" height="50" rx="3" fill="#90a4ae"/>
+                    <rect x="42" y="232" width="10" height="12" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="57" y="232" width="10" height="12" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="72" y="232" width="10" height="12" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="42" y="250" width="10" height="12" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="57" y="250" width="10" height="12" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="72" y="250" width="10" height="12" rx="1" fill="#e3f2fd" opacity=".8"/>
+
+                    <!-- 右侧建筑 -->
+                    <rect x="700" y="105" width="60" height="80" rx="4" fill="#bdc3c7" filter="url(#shadow)"/>
+                    <rect x="705" y="110" width="50" height="70" rx="3" fill="#78909c"/>
+                    <rect x="711" y="118" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="724" y="118" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="737" y="118" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="711" y="133" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="724" y="133" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="737" y="133" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="711" y="148" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="724" y="148" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+
+                    <!-- 右侧建筑2 -->
+                    <rect x="700" y="220" width="60" height="55" rx="4" fill="#bdc3c7" filter="url(#shadow)"/>
+                    <rect x="705" y="225" width="50" height="45" rx="3" fill="#90a4ae"/>
+                    <rect x="712" y="232" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="725" y="232" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="738" y="232" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="712" y="247" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+                    <rect x="725" y="247" width="8" height="10" rx="1" fill="#e3f2fd" opacity=".8"/>
+
+                    <!-- 道路名称标签 -->
+                    <rect x="85" y="190" width="80" height="16" rx="3" fill="white" opacity=".8"/>
+                    <text x="125" y="202" text-anchor="middle" font-size="9" fill="#546e7a">朝阳区主干道</text>
+                    <rect x="600" y="190" width="64" height="16" rx="3" fill="white" opacity=".8"/>
+                    <text x="632" y="202" text-anchor="middle" font-size="9" fill="#546e7a">科技园大道</text>
+
+                    <!-- 定位大头针 -->
+                    <g transform="translate(484, 148)" filter="url(#shadow)">
+                        <!-- 针身 -->
+                        <path d="M16 0 Q16 -32 0 -32 Q-16 -32 -16 -48 Q-16 -72 0 -72 Q16 -72 16 -48 Q16 -32 0 -32 Z" fill="#e53935" transform="scale(0.7)"/>
+                        <!-- 圆头 -->
+                        <circle cy="-34" r="16" fill="#e53935" transform="scale(0.7)"/>
+                        <circle cy="-34" r="10" fill="white" opacity=".4" transform="scale(0.7)"/>
+                        <text y="-28" text-anchor="middle" font-size="14" transform="scale(0.7)">📍</text>
+                    </g>
+
+                    <!-- 信息弹窗 -->
+                    <g transform="translate(555, 130)">
+                        <rect width="175" height="65" rx="8" fill="white" filter="url(#shadow)"/>
+                        <!-- 小三角指向 -->
+                        <polygon points="0,32 -10,26 -10,38" fill="white"/>
+                        <text x="12" y="20" font-size="10" font-weight="bold" fill="#333">智慧学习平台</text>
+                        <text x="12" y="34" font-size="8" fill="#667">📍 北京市朝阳区科技园</text>
+                        <text x="12" y="46" font-size="8" fill="#667">📱 400-888-8888</text>
+                        <text x="12" y="58" font-size="8" fill="#667">⏰ 周一至周五 9:00-18:00</text>
+                    </g>
+
+                    <!-- 比例尺 -->
+                    <g transform="translate(30, 365)">
+                        <rect width="80" height="16" rx="3" fill="rgba(255,255,255,.8)"/>
+                        <rect x="5" y="6" width="30" height="4" rx="1" fill="#546e7a"/>
+                        <rect x="35" y="6" width="30" height="4" rx="1" fill="white" stroke="#546e7a" stroke-width="1"/>
+                        <text x="7" y="14" font-size="7" fill="#546e7a">0</text>
+                        <text x="33" y="14" font-size="7" fill="#546e7a">500m</text>
+                        <text x="57" y="14" font-size="7" fill="#546e7a">1km</text>
+                    </g>
+
+                    <!-- 指北针 -->
+                    <g transform="translate(820, 340)">
+                        <circle r="22" fill="rgba(255,255,255,.85)"/>
+                        <polygon points="0,-16 -5,0 0,-5 5,0" fill="#e53935"/>
+                        <polygon points="0,16 -5,0 0,5 5,0" fill="#546e7a"/>
+                        <text y="4" text-anchor="middle" font-size="8" font-weight="bold" fill="#e53935">N</text>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>智慧学习平台</h3>
+                    <p>致力于打造最优质的在线学习体验，帮助每个人实现学习目标，提升职业竞争力。</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="courses.html">课程中心</a></li>
+                        <li><a href="plan.html">学习计划</a></li>
+                        <li><a href="resources.html">学习资源</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>📧 info@smartlearn.com</li>
+                        <li>📱 400-888-8888</li>
+                        <li>📍 北京市朝阳区科技园</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>关注我们</h4>
+                    <div class="social-links">
+                        <a href="#" title="微信">WeChat</a>
+                        <a href="#" title="微博">Weibo</a>
+                        <a href="#" title="B站">Bilibili</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 智慧学习平台 版权所有 | 京ICP备12345678号 | 网站地图 | 隐私政策</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

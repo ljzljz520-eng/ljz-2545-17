@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习计划 - 智慧学习平台</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>智慧学习</h1>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="courses.html">课程中心</a></li>
+                <li><a href="plan.html" class="active">学习计划</a></li>
+                <li><a href="resources.html">学习资源</a></li>
+                <li><a href="profile.html">个人中心</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>智能学习计划</h1>
+            <p>制定个性化学习路径，高效达成学习目标</p>
+        </div>
+    </section>
+
+    <!-- 学习计划生成器 -->
+    <section class="plan-generator">
+        <div class="container">
+            <div class="plan-form-card">
+                <h2>创建你的专属学习计划</h2>
+                <form id="planForm">
+                    <div class="form-group">
+                        <label for="learningGoal">学习目标</label>
+                        <select id="learningGoal" required>
+                            <option value="">请选择你的学习目标</option>
+                            <option value="frontend">成为前端开发工程师</option>
+                            <option value="backend">成为后端开发工程师</option>
+                            <option value="fullstack">成为全栈开发工程师</option>
+                            <option value="designer">成为UI/UX设计师</option>
+                            <option value="data">成为数据分析师</option>
+                            <option value="ai">成为AI工程师</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="currentLevel">当前水平</label>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="level" value="beginner" required>
+                                <span>零基础</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="level" value="intermediate">
+                                <span>有一定基础</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="level" value="advanced">
+                                <span>较为熟练</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studyTime">每周学习时间</label>
+                        <select id="studyTime" required>
+                            <option value="">请选择每周可投入的学习时间</option>
+                            <option value="5">5小时以下</option>
+                            <option value="10">5-10小时</option>
+                            <option value="20">10-20小时</option>
+                            <option value="30">20小时以上</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="duration">期望完成时间</label>
+                        <select id="duration" required>
+                            <option value="">请选择期望完成时间</option>
+                            <option value="3">3个月</option>
+                            <option value="6">6个月</option>
+                            <option value="12">12个月</option>
+                            <option value="24">24个月</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">生成学习计划</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 推荐学习路径 -->
+    <section class="learning-paths">
+        <div class="container">
+            <h2 class="section-title">热门学习路径</h2>
+            <div class="paths-grid">
+                <div class="path-card">
+                    <div class="path-header">
+                        <h3>🎨 前端开发工程师</h3>
+                        <span class="path-duration">6-12个月</span>
+                    </div>
+                    <div class="path-content">
+                        <div class="path-steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-info">
+                                    <h4>基础阶段</h4>
+                                    <p>HTML5、CSS3、JavaScript基础</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-info">
+                                    <h4>进阶阶段</h4>
+                                    <p>ES6+、响应式设计、前端工程化</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-info">
+                                    <h4>框架阶段</h4>
+                                    <p>Vue/React框架、状态管理</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-info">
+                                    <h4>实战阶段</h4>
+                                    <p>项目实战、性能优化、部署上线</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary">选择此路径</button>
+                    </div>
+                </div>
+
+                <div class="path-card">
+                    <div class="path-header">
+                        <h3>💻 全栈开发工程师</h3>
+                        <span class="path-duration">12-18个月</span>
+                    </div>
+                    <div class="path-content">
+                        <div class="path-steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-info">
+                                    <h4>前端基础</h4>
+                                    <p>HTML、CSS、JavaScript、React/Vue</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-info">
+                                    <h4>后端开发</h4>
+                                    <p>Node.js/Python、数据库、API设计</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-info">
+                                    <h4>运维部署</h4>
+                                    <p>Linux、Docker、CI/CD</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-info">
+                                    <h4>全栈项目</h4>
+                                    <p>完整项目开发、架构设计</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary">选择此路径</button>
+                    </div>
+                </div>
+
+                <div class="path-card">
+                    <div class="path-header">
+                        <h3>🤖 人工智能工程师</h3>
+                        <span class="path-duration">12-24个月</span>
+                    </div>
+                    <div class="path-content">
+                        <div class="path-steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-info">
+                                    <h4>编程基础</h4>
+                                    <p>Python编程、数据结构与算法</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-info">
+                                    <h4>数学基础</h4>
+                                    <p>线性代数、概率统计、微积分</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-info">
+                                    <h4>机器学习</h4>
+                                    <p>监督学习、无监督学习、深度学习</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-info">
+                                    <h4>项目实战</h4>
+                                    <p>计算机视觉、NLP、推荐系统</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary">选择此路径</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学习建议 -->
+    <section class="study-tips">
+        <div class="container">
+            <h2 class="section-title">学习建议</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">📅</div>
+                    <h3>制定明确目标</h3>
+                    <p>设定清晰的短期和长期学习目标，将大目标分解为可实现的小目标。</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">⏰</div>
+                    <h3>保持学习节奏</h3>
+                    <p>每天固定时间学习，养成良好的学习习惯，持之以恒最重要。</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">💪</div>
+                    <h3>注重实践练习</h3>
+                    <p>理论与实践相结合，多做项目练习，在实战中提升技能。</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🔄</div>
+                    <h3>定期复习总结</h3>
+                    <p>及时复习所学知识，总结学习经验，巩固学习成果。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>智慧学习平台</h3>
+                    <p>致力于打造最优质的在线学习体验，帮助每个人实现学习目标，提升职业竞争力。</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="courses.html">课程中心</a></li>
+                        <li><a href="plan.html">学习计划</a></li>
+                        <li><a href="resources.html">学习资源</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>📧 info@smartlearn.com</li>
+                        <li>📱 400-888-8888</li>
+                        <li>📍 北京市朝阳区科技园</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>关注我们</h4>
+                    <div class="social-links">
+                        <a href="#" title="微信">WeChat</a>
+                        <a href="#" title="微博">Weibo</a>
+                        <a href="#" title="B站">Bilibili</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 智慧学习平台 版权所有 | 京ICP备12345678号 | 网站地图 | 隐私政策</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

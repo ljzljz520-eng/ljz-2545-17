@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程中心 - 智慧学习平台</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>智慧学习</h1>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="courses.html" class="active">课程中心</a></li>
+                <li><a href="plan.html">学习计划</a></li>
+                <li><a href="resources.html">学习资源</a></li>
+                <li><a href="profile.html">个人中心</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>课程中心</h1>
+            <p>精选优质课程，助你快速成长</p>
+        </div>
+    </section>
+
+    <!-- 课程筛选 -->
+    <section class="course-filter">
+        <div class="container">
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-category="all">全部课程</button>
+                <button class="filter-btn" data-category="frontend">前端开发</button>
+                <button class="filter-btn" data-category="backend">后端开发</button>
+                <button class="filter-btn" data-category="design">UI设计</button>
+                <button class="filter-btn" data-category="ai">人工智能</button>
+                <button class="filter-btn" data-category="data">数据分析</button>
+            </div>
+            <div class="filter-search">
+                <input type="text" id="searchInput" placeholder="搜索课程...">
+                <button id="searchBtn">🔍 搜索</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 课程列表 -->
+    <section class="courses-section">
+        <div class="container">
+            <div class="courses-list" id="coursesList">
+                <div class="course-item" data-category="frontend">
+                    <div class="course-thumbnail" style="background:linear-gradient(135deg,#667eea,#764ba2);position:relative;overflow:hidden">
+                        <span class="course-badge">热门</span>
+                        <svg width="100%" height="100%" viewBox="0 0 220 130" preserveAspectRatio="xMidYMid meet" style="position:absolute;inset:0">
+                            <!-- HTML5 标志形状 -->
+                            <polygon points="28,10 34,82 80,96 126,82 132,10" fill="rgba(255,255,255,.2)"/>
+                            <polygon points="38,22 42,68 80,80 118,68 122,22" fill="rgba(255,255,255,.15)"/>
+                            <text x="80" y="60" text-anchor="middle" font-size="24" font-weight="bold" fill="rgba(255,255,255,.85)">5</text>
+                            <!-- CSS3 标지 -->
+                            <polygon points="145,10 151,82 185,96 219,82 225,10" fill="rgba(255,255,255,.18)" transform="translate(-30,0)"/>
+                            <text x="155" y="60" text-anchor="middle" font-size="14" font-weight="bold" fill="rgba(255,255,255,.8)">CSS</text>
+                            <text x="155" y="76" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.65)">样式</text>
+                            <!-- 代码片段 -->
+                            <text x="10" y="115" font-size="7" font-family="monospace" fill="rgba(255,255,255,.5)">&lt;div class="hero"&gt;...&lt;/div&gt;</text>
+                        </svg>
+                    </div>
+                    <div class="course-details">
+                        <h3>HTML5+CSS3网页开发基础</h3>
+                        <p class="course-instructor">👨‍🏫 讲师：张老师</p>
+                        <p class="course-description">从零开始学习网页开发，掌握HTML5和CSS3核心技术，打造现代化响应式网页。</p>
+                        <div class="course-stats">
+                            <span>⏱️ 30课时</span>
+                            <span>👥 8,523人学习</span>
+                            <span class="course-price">¥199</span>
+                        </div>
+                        <button class="btn btn-primary">立即学习 →</button>
+                    </div>
+                </div>
+
+                <div class="course-item" data-category="frontend">
+                    <div class="course-thumbnail" style="background:linear-gradient(135deg,#f093fb,#f5576c);position:relative;overflow:hidden">
+                        <span class="course-badge">推荐</span>
+                        <svg width="100%" height="100%" viewBox="0 0 220 130" preserveAspectRatio="xMidYMid meet" style="position:absolute;inset:0">
+                            <!-- JS 黄色方块标志 -->
+                            <rect x="20" y="15" width="80" height="80" rx="6" fill="rgba(255,220,0,.35)"/>
+                            <text x="38" y="68" font-size="32" font-family="monospace" font-weight="bold" fill="rgba(255,255,255,.9)">JS</text>
+                            <!-- 代码关键字 -->
+                            <rect x="112" y="20" width="96" height="86" rx="6" fill="rgba(0,0,20,.25)"/>
+                            <text x="120" y="38" font-size="9" font-family="monospace" fill="#ffd166">function</text>
+                            <text x="168" y="38" font-size="9" font-family="monospace" fill="rgba(255,255,255,.8)">sum</text>
+                            <text x="195" y="38" font-size="9" font-family="monospace" fill="rgba(255,255,255,.6)">()</text>
+                            <text x="120" y="52" font-size="9" font-family="monospace" fill="rgba(255,255,255,.5)">{</text>
+                            <text x="130" y="64" font-size="9" font-family="monospace" fill="#a0e9ff">return</text>
+                            <text x="170" y="64" font-size="9" font-family="monospace" fill="rgba(255,255,255,.7)">a+b</text>
+                            <text x="120" y="76" font-size="9" font-family="monospace" fill="rgba(255,255,255,.5)">}</text>
+                            <text x="120" y="96" font-size="9" font-family="monospace" fill="#06d6a0">// ES6+</text>
+                            <!-- 版本标签 -->
+                            <text x="20" y="115" font-size="8" fill="rgba(255,255,255,.7)">ES2024 · Promise · async/await</text>
+                        </svg>
+                    </div>
+                    <div class="course-details">
+                        <h3>JavaScript高级编程</h3>
+                        <p class="course-instructor">👨‍🏫 讲师：李老师</p>
+                        <p class="course-description">深入学习JavaScript，掌握ES6+新特性、异步编程、面向对象等高级概念。</p>
+                        <div class="course-stats">
+                            <span>⏱️ 45课时</span>
+                            <span>👥 6,234人学习</span>
+                            <span class="course-price">¥299</span>
+                        </div>
+                        <button class="btn btn-primary">立即学习 →</button>
+                    </div>
+                </div>
+
+                <div class="course-item" data-category="frontend">
+                    <div class="course-thumbnail" style="background:linear-gradient(135deg,#4facfe,#00f2fe);position:relative;overflow:hidden">
+                        <svg width="100%" height="100%" viewBox="0 0 220 130" preserveAspectRatio="xMidYMid meet" style="position:absolute;inset:0">
+                            <!-- Vue logo 菱形 -->
+                            <polygon points="110,12 140,62 80,62" fill="rgba(255,255,255,.35)"/>
+                            <polygon points="110,25 132,62 88,62" fill="rgba(255,255,255,.2)"/>
+                            <polygon points="110,38 124,62 96,62" fill="rgba(255,255,255,.5)"/>
+                            <text x="110" y="82" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Vue 3</text>
+                            <!-- 组件树 -->
+                            <rect x="20" y="95" width="44" height="24" rx="4" fill="rgba(255,255,255,.2)"/>
+                            <text x="42" y="111" text-anchor="middle" font-size="8" fill="white">App</text>
+                            <!-- 连接线 -->
+                            <line x1="42" y1="119" x2="42" y2="128" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+                            <line x1="42" y1="128" x2="95" y2="128" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+                            <line x1="95" y1="128" x2="95" y2="119" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+                            <rect x="70" y="95" width="50" height="24" rx="4" fill="rgba(255,255,255,.2)"/>
+                            <text x="95" y="111" text-anchor="middle" font-size="8" fill="white">Router</text>
+                            <rect x="130" y="95" width="44" height="24" rx="4" fill="rgba(255,255,255,.2)"/>
+                            <text x="152" y="111" text-anchor="middle" font-size="8" fill="white">Pinia</text>
+                            <!-- 标签 -->
+                            <rect x="158" y="12" width="52" height="18" rx="9" fill="rgba(255,255,255,.25)"/>
+                            <text x="184" y="25" text-anchor="middle" font-size="8" fill="white">组合式 API</text>
+                        </svg>
+                    </div>
+                    <div class="course-details">
+                        <h3>Vue3全家桶实战开发</h3>
+                        <p class="course-instructor">👨‍🏫 讲师：王老师</p>
+                        <p class="course-description">全面学习Vue3框架，包括组合式API、Vue Router、Pinia状态管理等。</p>
+                        <div class="course-stats">
+                            <span>⏱️ 50课时</span>
+                            <span>👥 5,678人学习</span>
+                            <span class="course-price">¥399</span>
+                        </div>
+                        <button class="btn btn-primary">立即学习 →</button>
+                    </div>
+                </div>
+
+                <div class="course-item" data-category="backend">
+                    <div class="course-thumbnail" style="background:linear-gradient(135deg,#fa709a,#fee140);position:relative;overflow:hidden">
+                        <svg width="100%" height="100%" viewBox="0 0 220 130" preserveAspectRatio="xMidYMid meet" style="position:absolute;inset:0">
+                            <!-- Node.js 绿色六边形标志 -->
+                            <polygon points="65,18 95,18 110,44 95,70 65,70 50,44" fill="rgba(255,255,255,.25)"/>
+                            <text x="80" y="50" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Node</text>
+                            <text x="80" y="64" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.8)">.js</text>
+                            <!-- 服务器图标 -->
+                            <rect x="128" y="15" width="76" height="95" rx="6" fill="rgba(255,255,255,.2)"/>
+                            <rect x="134" y="22" width="64" height="14" rx="3" fill="rgba(255,255,255,.3)"/>
+                            <circle cx="143" cy="29" r="4" fill="#06d6a0"/>
+                            <rect x="150" y="27" width="40" height="4" rx="2" fill="rgba(255,255,255,.5)"/>
+                            <rect x="134" y="42" width="64" height="14" rx="3" fill="rgba(255,255,255,.2)"/>
+                            <circle cx="143" cy="49" r="4" fill="#ffd166"/>
+                            <rect x="150" y="47" width="30" height="4" rx="2" fill="rgba(255,255,255,.4)"/>
+                            <rect x="134" y="62" width="64" height="14" rx="3" fill="rgba(255,255,255,.2)"/>
+                            <circle cx="143" cy="69" r="4" fill="#a0e9ff"/>
+                            <rect x="150" y="67" width="44" height="4" rx="2" fill="rgba(255,255,255,.4)"/>
+                            <!-- API 箭头 -->
+                            <path d="M110 44 L128 44" stroke="rgba(255,255,255,.5)" stroke-width="2" marker-end="url(#arr)"/>
+                            <text x="18" y="100" font-size="8" fill="rgba(255,255,255,.7)">REST API · Express · MongoDB</text>
+                        </svg>
+                    </div>
+                    <div class="course-details">
+                        <h3>Node.js后端开发实战</h3>
+                        <p class="course-instructor">👨‍🏫 讲师：赵老师</p>
+                        <p class="course-description">使用Node.js和Express构建RESTful API，掌握后端开发核心技能。</p>
+                        <div class="course-stats">
+                            <span>⏱️ 40课时</span>
+                            <span>👥 4,892人学习</span>
+                            <span class="course-price">¥349</span>
+                        </div>
+                        <button class="btn btn-primary">立即学习 →</button>
+                    </div>
+                </div>
+
+                <div class="course-item" data-category="backend">
+                    <div class="course-thumbnail" style="background:linear-gradient(135deg,#30cfd0,#330867);position:relative;overflow:hidden">
+                        <span class="course-badge">新课</span>
+                        <svg width="100%" height="100%" viewBox="0 0 220 130" preserveAspectRatio="xMidYMid meet" style="position:absolute;inset:0">
+                            <!-- Python 蛇形图标 -->
+                            <!-- 蓝色蛇 -->
+                            <path d="M55,30 Q55,20 65,20 L90,20 Q100,20 100,30 L100,55 Q100,60 95,60 L75,60 Q70,60 70,65 L70,70" fill="none" stroke="rgba(160,220,255,.8)" stroke-width="8" stroke-linecap="round"/>
+                            <circle cx="70" cy="76" r="7" fill="rgba(160,220,255,.8)"/>
+                            <!-- 黄色蛇 -->
+                            <path d="M85,100 Q85,110 75,110 L50,110 Q40,110 40,100 L40,75 Q40,70 45,70 L65,70 Q70,70 70,65 L70,60" fill="none" stroke="rgba(255,215,0,.75)" stroke-width="8" stroke-linecap="round"/>
+                            <circle cx="70" cy="54" r="7" fill="rgba(255,215,0,.75)"/>
+                            <!-- Django 标签 -->
+                            <rect x="115" y="25" width="88" height="80" rx="6" fill="rgba(255,255,255,.15)"/>
+                            <text x="159" y="46" text-anchor="middle" font-size="14" font-weight="bold" fill="rgba(255,255,255,.9)">Django</text>
+                            <rect x="122" y="54" width="74" height="4" rx="2" fill="rgba(255,255,255,.4)"/>
+                            <rect x="122" y="63" width="55" height="4" rx="2" fill="rgba(255,255,255,.3)"/>
+                            <rect x="122" y="72" width="65" height="4" rx="2" fill="rgba(255,255,255,.3)"/>
+                            <rect x="122" y="81" width="44" height="4" rx="2" fill="rgba(255,255,255,.3)"/>
+                            <text x="122" y="100" font-size="8" fill="rgba(255,255,255,.6)">MTV · ORM · Template</text>
+                        </svg>
+                    </div>
+                    <div class="course-details">
+                        <h3>Python Web开发Django框架</h3>
+                        <p class="course-instructor">👨‍🏫 讲师：刘老师</p>
+                        <p class="course-description">学习Django框架，快速构建功能完善的Web应用，包括ORM、模板、认证等。</p>
+                        <div class="course-stats">
+                            <span>⏱️ 38课时</span>
+                            <span>👥 3,456人学习</span>
+                            <span class="course-price">¥329</span>
+                        </div>
+                        <button class="btn btn-primary">立即学习</button>
+                    </div>
+                </div>
+
+                <div class="course-item" data-category="design">
+                    <div class="course-thumbnail" style="background:linear-gradient(135deg,#a8edea,#fed6e3);position:relative;overflow:hidden">
+                        <svg width="100%" height="100%" viewBox="0 0 220 130" preserveAspectRatio="xMidYMid meet" style="position:absolute;inset:0">
+                            <!-- Figma 四色方块标志 -->
+                            <rect x="30" y="20" width="36" height="36" rx="18" fill="rgba(255,116,101,.6)"/>
+                            <rect x="66" y="20" width="36" height="36" rx="18" fill="rgba(255,186,58,.6)"/>
+                            <rect x="30" y="56" width="36" height="36" rx="18" fill="rgba(160,220,80,.6)"/>
+                            <rect x="66" y="56" width="36" height="36" rx="18" fill="rgba(80,180,255,.6)"/>
+                            <circle cx="84" cy="74" r="18" fill="rgba(180,130,255,.6)"/>
+                            <!-- Figma 文字 -->
+                            <text x="84" y="108" text-anchor="middle" font-size="10" font-weight="bold" fill="rgba(80,60,100,.85)">Figma</text>
+                            <!-- 界面线框图 -->
+                            <rect x="122" y="18" width="86" height="95" rx="6" fill="rgba(255,255,255,.35)"/>
+                            <rect x="128" y="24" width="74" height="10" rx="3" fill="rgba(100,80,120,.25)"/>
+                            <rect x="128" y="40" width="34" height="28" rx="3" fill="rgba(100,80,120,.2)"/>
+                            <rect x="168" y="40" width="34" height="28" rx="3" fill="rgba(100,80,120,.2)"/>
+                            <rect x="128" y="74" width="74" height="8" rx="3" fill="rgba(100,80,120,.2)"/>
+                            <rect x="128" y="86" width="50" height="6" rx="3" fill="rgba(100,80,120,.15)"/>
+                            <rect x="128" y="96" width="62" height="12" rx="4" fill="rgba(160,130,255,.4)"/>
+                            <text x="159" y="106" text-anchor="middle" font-size="7" fill="rgba(80,60,100,.8)">立即设计</text>
+                        </svg>
+                    </div>
+                    <div class="course-details">
+                        <h3>Figma UI设计实战课程</h3>
+                        <p class="course-instructor">👩‍🏫 讲师：陈老师</p>
+                        <p class="course-description">从设计基础到高级技巧，使用Figma打造专业级UI设计作品。</p>
+                        <div class="course-stats">
+                            <span>⏱️ 35课时</span>
+                            <span>👥 4,123人学习</span>
+                            <span class="course-price">¥279</span>
+                        </div>
+                        <button class="btn btn-primary">立即学习</button>
+                    </div>
+                </div>
+
+                <div class="course-item" data-category="design">
+                    <div class="course-thumbnail" style="background:linear-gradient(135deg,#ffecd2,#fcb69f);position:relative;overflow:hidden">
+                        <svg width="100%" height="100%" viewBox="0 0 220 130" preserveAspectRatio="xMidYMid meet" style="position:absolute;inset:0">
+                            <!-- 用户旅程地图 -->
+                            <!-- 用户图标 -->
+                            <circle cx="38" cy="38" r="12" fill="rgba(180,80,60,.3)"/>
+                            <circle cx="38" cy="32" r="6" fill="rgba(180,80,60,.5)"/>
+                            <path d="M25 50 Q25 40 38 40 Q51 40 51 50Z" fill="rgba(180,80,60,.5)"/>
+                            <!-- 旅程路径 -->
+                            <path d="M54 38 Q75 20 100 38 Q125 55 148 38 Q170 22 195 38" fill="none" stroke="rgba(160,80,40,.6)" stroke-width="3" stroke-dasharray="6,3"/>
+                            <!-- 旅程节点 -->
+                            <circle cx="75" cy="30" r="8" fill="rgba(255,140,80,.6)"/>
+                            <text x="75" y="34" text-anchor="middle" font-size="8" fill="white">需求</text>
+                            <circle cx="120" cy="50" r="8" fill="rgba(255,140,80,.6)"/>
+                            <text x="120" y="54" text-anchor="middle" font-size="8" fill="white">研究</text>
+                            <circle cx="165" cy="30" r="8" fill="rgba(255,140,80,.6)"/>
+                            <text x="165" y="34" text-anchor="middle" font-size="8" fill="white">设计</text>
+                            <circle cx="200" cy="44" r="8" fill="rgba(255,200,80,.7)"/>
+                            <text x="200" y="48" text-anchor="middle" font-size="8" fill="white">测试</text>
+                            <!-- 情绪曲线 -->
+                            <path d="M54 90 Q80 70 110 80 Q140 90 165 72 Q185 60 210 68" fill="none" stroke="rgba(160,80,40,.45)" stroke-width="2.5"/>
+                            <text x="20" y="112" font-size="8" fill="rgba(100,50,30,.7)">用户体验 · 信息架构 · 交互设计</text>
+                        </svg>
+                    </div>
+                    <div class="course-details">
+                        <h3>用户体验设计UX全攻略</h3>
+                        <p class="course-instructor">👩‍🏫 讲师：杨老师</p>
+                        <p class="course-description">学习用户研究、信息架构、交互设计等UX核心方法论。</p>
+                        <div class="course-stats">
+                            <span>⏱️ 32课时</span>
+                            <span>👥 3,789人学习</span>
+                            <span class="course-price">¥259</span>
+                        </div>
+                        <button class="btn btn-primary">立即学习</button>
+                    </div>
+                </div>
+
+                <div class="course-item" data-category="ai">
+                    <div class="course-thumbnail" style="background:linear-gradient(135deg,#ff9a9e,#fecfef);position:relative;overflow:hidden">
+                        <span class="course-badge">热门</span>
+                        <svg width="100%" height="100%" viewBox="0 0 220 130" preserveAspectRatio="xMidYMid meet" style="position:absolute;inset:0">
+                            <!-- 神经网络 -->
+                            <!-- 输入层 -->
+                            <circle cx="30" cy="30" r="7" fill="rgba(200,60,80,.5)"/>
+                            <circle cx="30" cy="60" r="7" fill="rgba(200,60,80,.5)"/>
+                            <circle cx="30" cy="90" r="7" fill="rgba(200,60,80,.5)"/>
+                            <!-- 隐藏层1 -->
+                            <circle cx="82" cy="20" r="7" fill="rgba(180,60,120,.5)"/>
+                            <circle cx="82" cy="48" r="7" fill="rgba(180,60,120,.5)"/>
+                            <circle cx="82" cy="76" r="7" fill="rgba(180,60,120,.5)"/>
+                            <circle cx="82" cy="104" r="7" fill="rgba(180,60,120,.5)"/>
+                            <!-- 隐藏层2 -->
+                            <circle cx="138" cy="30" r="7" fill="rgba(160,80,180,.55)"/>
+                            <circle cx="138" cy="60" r="7" fill="rgba(160,80,180,.55)"/>
+                            <circle cx="138" cy="90" r="7" fill="rgba(160,80,180,.55)"/>
+                            <!-- 输出层 -->
+                            <circle cx="190" cy="45" r="7" fill="rgba(120,80,200,.6)"/>
+                            <circle cx="190" cy="75" r="7" fill="rgba(120,80,200,.6)"/>
+                            <!-- 连接线 (输入→隐藏1) -->
+                            <line x1="37" y1="30" x2="75" y2="20" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+                            <line x1="37" y1="30" x2="75" y2="48" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+                            <line x1="37" y1="60" x2="75" y2="48" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+                            <line x1="37" y1="60" x2="75" y2="76" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+                            <line x1="37" y1="90" x2="75" y2="76" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+                            <line x1="37" y1="90" x2="75" y2="104" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+                            <!-- 连接线 (隐藏1→隐藏2) -->
+                            <line x1="89" y1="20" x2="131" y2="30" stroke="rgba(255,255,255,.25)" stroke-width="1"/>
+                            <line x1="89" y1="48" x2="131" y2="30" stroke="rgba(255,255,255,.25)" stroke-width="1"/>
+                            <line x1="89" y1="48" x2="131" y2="60" stroke="rgba(255,255,255,.25)" stroke-width="1"/>
+                            <line x1="89" y1="76" x2="131" y2="60" stroke="rgba(255,255,255,.25)" stroke-width="1"/>
+                            <line x1="89" y1="76" x2="131" y2="90" stroke="rgba(255,255,255,.25)" stroke-width="1"/>
+                            <line x1="89" y1="104" x2="131" y2="90" stroke="rgba(255,255,255,.25)" stroke-width="1"/>
+                            <!-- 连接线 (隐藏2→输出) -->
+                            <line x1="145" y1="30" x2="183" y2="45" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+                            <line x1="145" y1="60" x2="183" y2="45" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+                            <line x1="145" y1="60" x2="183" y2="75" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+                            <line x1="145" y1="90" x2="183" y2="75" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+                            <!-- 标签 -->
+                            <text x="10" y="120" font-size="8" fill="rgba(120,40,60,.8)">ML · 分类 · 回归 · 聚类 · Python</text>
+                        </svg>
+                    </div>
+                    <div class="course-details">
+                        <h3>机器学习入门到实战</h3>
+                        <p class="course-instructor">👨‍🏫 讲师：周老师</p>
+                        <p class="course-description">系统学习机器学习算法，使用Python实现分类、回归、聚类等任务。</p>
+                        <div class="course-stats">
+                            <span>⏱️ 55课时</span>
+                            <span>👥 7,234人学习</span>
+                            <span class="course-price">¥499</span>
+                        </div>
+                        <button class="btn btn-primary">立即学习</button>
+                    </div>
+                </div>
+
+                <div class="course-item" data-category="ai">
+                    <div class="course-thumbnail" style="background:linear-gradient(135deg,#fbc2eb,#a6c1ee);position:relative;overflow:hidden">
+                        <svg width="100%" height="100%" viewBox="0 0 220 130" preserveAspectRatio="xMidYMid meet" style="position:absolute;inset:0">
+                            <!-- 深度学习层次图 -->
+                            <!-- 输入层 -->
+                            <rect x="15" y="35" width="22" height="60" rx="4" fill="rgba(180,100,200,.4)"/>
+                            <text x="26" y="68" text-anchor="middle" font-size="6" fill="white">输入</text>
+                            <text x="26" y="78" text-anchor="middle" font-size="6" fill="white">层</text>
+                            <!-- 卷积层 -->
+                            <rect x="50" y="25" width="22" height="80" rx="4" fill="rgba(150,80,220,.45)"/>
+                            <text x="61" y="63" text-anchor="middle" font-size="6" fill="white">Conv</text>
+                            <text x="61" y="73" text-anchor="middle" font-size="6" fill="white">Layer</text>
+                            <!-- 池化层 -->
+                            <rect x="85" y="30" width="22" height="70" rx="4" fill="rgba(120,80,230,.5)"/>
+                            <text x="96" y="63" text-anchor="middle" font-size="6" fill="white">Pool</text>
+                            <text x="96" y="73" text-anchor="middle" font-size="6" fill="white">Layer</text>
+                            <!-- 全连接层 -->
+                            <rect x="120" y="20" width="22" height="90" rx="4" fill="rgba(100,100,240,.5)"/>
+                            <text x="131" y="63" text-anchor="middle" font-size="6" fill="white">FC</text>
+                            <text x="131" y="73" text-anchor="middle" font-size="6" fill="white">Layer</text>
+                            <!-- 输出层 -->
+                            <rect x="155" y="40" width="22" height="50" rx="4" fill="rgba(80,120,230,.55)"/>
+                            <text x="166" y="63" text-anchor="middle" font-size="6" fill="white">输出</text>
+                            <text x="166" y="73" text-anchor="middle" font-size="6" fill="white">层</text>
+                            <!-- 连接箭头 -->
+                            <line x1="37" y1="65" x2="50" y2="65" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/>
+                            <line x1="72" y1="65" x2="85" y2="65" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/>
+                            <line x1="107" y1="65" x2="120" y2="65" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/>
+                            <line x1="142" y1="65" x2="155" y2="65" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/>
+                            <!-- TensorFlow / PyTorch 标 -->
+                            <rect x="188" y="30" width="26" height="16" rx="4" fill="rgba(255,165,0,.5)"/>
+                            <text x="201" y="42" text-anchor="middle" font-size="7" fill="white">TF</text>
+                            <rect x="188" y="52" width="26" height="16" rx="4" fill="rgba(255,80,80,.45)"/>
+                            <text x="201" y="64" text-anchor="middle" font-size="7" fill="white">PT</text>
+                            <!-- 标签 -->
+                            <text x="14" y="120" font-size="8" fill="rgba(80,50,120,.8)">CNN · RNN · Transformer · DL</text>
+                        </svg>
+                    </div>
+                    <div class="course-details">
+                        <h3>深度学习与神经网络</h3>
+                        <p class="course-instructor">👨‍🏫 讲师：吴老师</p>
+                        <p class="course-description">掌握深度学习框架TensorFlow/PyTorch，构建CNN、RNN等神经网络模型。</p>
+                        <div class="course-stats">
+                            <span>⏱️ 60课时</span>
+                            <span>👥 5,891人学习</span>
+                            <span class="course-price">¥599</span>
+                        </div>
+                        <button class="btn btn-primary">立即学习</button>
+                    </div>
+                </div>
+
+                <div class="course-item" data-category="data">
+                    <div class="course-thumbnail" style="background:linear-gradient(135deg,#fdcbf1,#e6dee9);position:relative;overflow:hidden">
+                        <svg width="100%" height="100%" viewBox="0 0 220 130" preserveAspectRatio="xMidYMid meet" style="position:absolute;inset:0">
+                            <!-- 数据可视化：折线图 + 柱状图 + 饼图 -->
+                            <!-- 坐标轴 -->
+                            <line x1="25" y1="100" x2="120" y2="100" stroke="rgba(120,60,150,.5)" stroke-width="1.5"/>
+                            <line x1="25" y1="30" x2="25" y2="100" stroke="rgba(120,60,150,.5)" stroke-width="1.5"/>
+                            <!-- 柱状图 -->
+                            <rect x="32" y="65" width="12" height="35" rx="2" fill="rgba(180,100,200,.55)"/>
+                            <rect x="50" y="50" width="12" height="50" rx="2" fill="rgba(160,80,220,.6)"/>
+                            <rect x="68" y="42" width="12" height="58" rx="2" fill="rgba(140,80,230,.65)"/>
+                            <rect x="86" y="58" width="12" height="42" rx="2" fill="rgba(180,100,200,.55)"/>
+                            <rect x="104" y="38" width="12" height="62" rx="2" fill="rgba(120,80,240,.7)"/>
+                            <!-- 折线图 -->
+                            <polyline points="38,60 56,45 74,38 92,52 110,35" fill="none" stroke="rgba(255,120,150,.8)" stroke-width="2"/>
+                            <circle cx="38" cy="60" r="3" fill="rgba(255,120,150,.9)"/>
+                            <circle cx="56" cy="45" r="3" fill="rgba(255,120,150,.9)"/>
+                            <circle cx="74" cy="38" r="3" fill="rgba(255,120,150,.9)"/>
+                            <circle cx="92" cy="52" r="3" fill="rgba(255,120,150,.9)"/>
+                            <circle cx="110" cy="35" r="3" fill="rgba(255,120,150,.9)"/>
+                            <!-- 饼图 -->
+                            <circle cx="170" cy="65" r="40" fill="rgba(255,255,255,.2)"/>
+                            <!-- 扇形分割 (近似) -->
+                            <path d="M170,65 L170,25 A40,40 0 0,1 205,78 Z" fill="rgba(160,80,220,.6)"/>
+                            <path d="M170,65 L205,78 A40,40 0 0,1 148,102 Z" fill="rgba(180,100,200,.5)"/>
+                            <path d="M170,65 L148,102 A40,40 0 0,1 134,42 Z" fill="rgba(255,120,150,.5)"/>
+                            <path d="M170,65 L134,42 A40,40 0 0,1 170,25 Z" fill="rgba(120,80,240,.55)"/>
+                            <!-- 标签 -->
+                            <text x="14" y="120" font-size="8" fill="rgba(100,50,120,.8)">Pandas · NumPy · Matplotlib</text>
+                        </svg>
+                    </div>
+                    <div class="course-details">
+                        <h3>Python数据分析实战</h3>
+                        <p class="course-instructor">👩‍🏫 讲师：郑老师</p>
+                        <p class="course-description">使用Pandas、NumPy、Matplotlib进行数据处理、分析和可视化。</p>
+                        <div class="course-stats">
+                            <span>⏱️ 42课时</span>
+                            <span>👥 6,456人学习</span>
+                            <span class="course-price">¥369</span>
+                        </div>
+                        <button class="btn btn-primary">立即学习</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>智慧学习平台</h3>
+                    <p>致力于打造最优质的在线学习体验，帮助每个人实现学习目标，提升职业竞争力。</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="courses.html">课程中心</a></li>
+                        <li><a href="plan.html">学习计划</a></li>
+                        <li><a href="resources.html">学习资源</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>📧 info@smartlearn.com</li>
+                        <li>📱 400-888-8888</li>
+                        <li>📍 北京市朝阳区科技园</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>关注我们</h4>
+                    <div class="social-links">
+                        <a href="#" title="微信">WeChat</a>
+                        <a href="#" title="微博">Weibo</a>
+                        <a href="#" title="B站">Bilibili</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 智慧学习平台 版权所有 | 京ICP备12345678号 | 网站地图 | 隐私政策</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

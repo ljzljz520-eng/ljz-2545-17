@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧学习 - 在线学习成长平台</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>智慧学习</h1>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="active">首页</a></li>
+                <li><a href="courses.html">课程中心</a></li>
+                <li><a href="plan.html">学习计划</a></li>
+                <li><a href="resources.html">学习资源</a></li>
+                <li><a href="profile.html">个人中心</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner轮播图 -->
+    <section class="banner">
+        <div class="slider">
+
+            <!-- 第1张：学习之旅 — 人物+书桌学习场景 -->
+            <div class="slide active">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <h2>🎓 开启智慧学习之旅</h2>
+                        <p>个性化学习路径，助力快速成长</p>
+                        <a href="courses.html" class="btn btn-primary">立即开始 →</a>
+                    </div>
+                    <div class="slide-illustration">
+                        <!-- 学习场景：人坐在桌前 + 屏幕 + 书 -->
+                        <svg width="320" height="260" viewBox="0 0 320 260">
+                            <!-- 背景圆 -->
+                            <circle cx="160" cy="130" r="120" fill="rgba(255,255,255,.1)"/>
+                            <!-- 桌子 -->
+                            <rect x="50" y="185" width="220" height="12" rx="4" fill="rgba(255,255,255,.5)"/>
+                            <rect x="70" y="197" width="10" height="40" rx="3" fill="rgba(255,255,255,.35)"/>
+                            <rect x="240" y="197" width="10" height="40" rx="3" fill="rgba(255,255,255,.35)"/>
+                            <!-- 笔记本电脑屏幕 -->
+                            <rect x="105" y="115" width="110" height="72" rx="6" fill="rgba(255,255,255,.25)" stroke="rgba(255,255,255,.6)" stroke-width="2"/>
+                            <!-- 屏幕内容 (代码/学习界面) -->
+                            <rect x="112" y="122" width="96" height="58" rx="3" fill="rgba(20,20,60,.3)"/>
+                            <rect x="118" y="130" width="55" height="3" rx="1" fill="rgba(255,255,255,.7)"/>
+                            <rect x="118" y="138" width="40" height="3" rx="1" fill="#a0e9ff"/>
+                            <rect x="118" y="146" width="65" height="3" rx="1" fill="rgba(255,255,255,.5)"/>
+                            <rect x="118" y="154" width="35" height="3" rx="1" fill="#ffd166"/>
+                            <rect x="118" y="162" width="50" height="3" rx="1" fill="rgba(255,255,255,.5)"/>
+                            <!-- 笔记本底座 -->
+                            <path d="M98 187 L100 185 L220 185 L222 187 Z" fill="rgba(255,255,255,.5)"/>
+                            <!-- 书本 (左侧) -->
+                            <rect x="60" y="158" width="30" height="28" rx="2" fill="rgba(255,255,255,.4)"/>
+                            <rect x="64" y="162" width="22" height="3" rx="1" fill="rgba(255,255,255,.7)"/>
+                            <rect x="64" y="170" width="18" height="2" rx="1" fill="rgba(255,255,255,.5)"/>
+                            <rect x="64" y="176" width="20" height="2" rx="1" fill="rgba(255,255,255,.5)"/>
+                            <!-- 书本 (右侧，斜放) -->
+                            <rect x="240" y="162" width="28" height="24" rx="2" fill="rgba(255,255,255,.35)" transform="rotate(-8 254 174)"/>
+                            <!-- 台灯 -->
+                            <line x1="240" y1="185" x2="252" y2="130" stroke="rgba(255,255,255,.5)" stroke-width="3"/>
+                            <ellipse cx="252" cy="128" rx="18" ry="8" fill="rgba(255,255,255,.35)"/>
+                            <ellipse cx="252" cy="128" rx="8" ry="4" fill="rgba(255,240,180,.6)"/>
+                            <!-- 人物头部 -->
+                            <circle cx="160" cy="96" r="18" fill="rgba(255,255,255,.7)"/>
+                            <!-- 眼睛 -->
+                            <circle cx="154" cy="93" r="2.5" fill="#667eea"/>
+                            <circle cx="166" cy="93" r="2.5" fill="#667eea"/>
+                            <!-- 嘴巴 -->
+                            <path d="M155 101 Q160 106 165 101" fill="none" stroke="#667eea" stroke-width="1.5" stroke-linecap="round"/>
+                            <!-- 身体 -->
+                            <path d="M140 130 Q140 113 160 113 Q180 113 180 130 L178 185 L142 185Z" fill="rgba(255,255,255,.45)"/>
+                            <!-- 手臂 (指向屏幕) -->
+                            <path d="M178 140 Q200 145 195 155" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="4" stroke-linecap="round"/>
+                            <!-- 装饰灯泡 -->
+                            <circle cx="56" cy="60" r="14" fill="rgba(255,255,255,.2)"/>
+                            <circle cx="56" cy="60" r="8" fill="rgba(255,240,100,.5)"/>
+                            <text x="56" y="65" text-anchor="middle" font-size="10">💡</text>
+                            <!-- 飘浮的小星星 -->
+                            <text x="278" y="68" font-size="14" fill="rgba(255,255,255,.6)">✦</text>
+                            <text x="292" y="100" font-size="10" fill="rgba(255,255,255,.4)">✦</text>
+                            <text x="42" y="100" font-size="10" fill="rgba(255,255,255,.4)">✦</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第2张：海量课程 — 课程卡片网格 -->
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <h2>📚 海量优质课程</h2>
+                        <p>涵盖编程、设计、商业等多个领域</p>
+                        <a href="courses.html" class="btn btn-primary">浏览课程 →</a>
+                    </div>
+                    <div class="slide-illustration">
+                        <!-- 课程卡片网格场景 -->
+                        <svg width="320" height="260" viewBox="0 0 320 260">
+                            <circle cx="160" cy="130" r="120" fill="rgba(255,255,255,.08)"/>
+                            <!-- 课程卡片1 (左上) -->
+                            <rect x="30" y="40" width="116" height="88" rx="8" fill="rgba(255,255,255,.22)"/>
+                            <rect x="30" y="40" width="116" height="44" rx="8" fill="rgba(255,255,255,.15)"/>
+                            <text x="88" y="70" text-anchor="middle" font-size="24">💻</text>
+                            <rect x="40" y="92" width="70" height="5" rx="2" fill="rgba(255,255,255,.7)"/>
+                            <rect x="40" y="102" width="50" height="4" rx="2" fill="rgba(255,255,255,.4)"/>
+                            <rect x="40" y="111" width="35" height="4" rx="2" fill="rgba(255,255,255,.35)"/>
+                            <!-- 进度条 -->
+                            <rect x="40" y="119" width="96" height="4" rx="2" fill="rgba(255,255,255,.2)"/>
+                            <rect x="40" y="119" width="65" height="4" rx="2" fill="#ffd166"/>
+
+                            <!-- 课程卡片2 (右上) -->
+                            <rect x="158" y="40" width="116" height="88" rx="8" fill="rgba(255,255,255,.22)"/>
+                            <rect x="158" y="40" width="116" height="44" rx="8" fill="rgba(255,255,255,.15)"/>
+                            <text x="216" y="70" text-anchor="middle" font-size="24">🎨</text>
+                            <rect x="168" y="92" width="70" height="5" rx="2" fill="rgba(255,255,255,.7)"/>
+                            <rect x="168" y="102" width="55" height="4" rx="2" fill="rgba(255,255,255,.4)"/>
+                            <rect x="168" y="111" width="40" height="4" rx="2" fill="rgba(255,255,255,.35)"/>
+                            <rect x="168" y="119" width="96" height="4" rx="2" fill="rgba(255,255,255,.2)"/>
+                            <rect x="168" y="119" width="85" height="4" rx="2" fill="#06d6a0"/>
+
+                            <!-- 课程卡片3 (左下) -->
+                            <rect x="30" y="142" width="116" height="88" rx="8" fill="rgba(255,255,255,.22)"/>
+                            <rect x="30" y="142" width="116" height="44" rx="8" fill="rgba(255,255,255,.15)"/>
+                            <text x="88" y="172" text-anchor="middle" font-size="24">🐍</text>
+                            <rect x="40" y="194" width="65" height="5" rx="2" fill="rgba(255,255,255,.7)"/>
+                            <rect x="40" y="204" width="45" height="4" rx="2" fill="rgba(255,255,255,.4)"/>
+                            <rect x="40" y="213" width="38" height="4" rx="2" fill="rgba(255,255,255,.35)"/>
+                            <rect x="40" y="221" width="96" height="4" rx="2" fill="rgba(255,255,255,.2)"/>
+                            <rect x="40" y="221" width="45" height="4" rx="2" fill="#ff6b6b"/>
+
+                            <!-- 课程卡片4 (右下) -->
+                            <rect x="158" y="142" width="116" height="88" rx="8" fill="rgba(255,255,255,.22)"/>
+                            <rect x="158" y="142" width="116" height="44" rx="8" fill="rgba(255,255,255,.15)"/>
+                            <text x="216" y="172" text-anchor="middle" font-size="24">🤖</text>
+                            <rect x="168" y="194" width="70" height="5" rx="2" fill="rgba(255,255,255,.7)"/>
+                            <rect x="168" y="204" width="55" height="4" rx="2" fill="rgba(255,255,255,.4)"/>
+                            <rect x="168" y="213" width="42" height="4" rx="2" fill="rgba(255,255,255,.35)"/>
+                            <rect x="168" y="221" width="96" height="4" rx="2" fill="rgba(255,255,255,.2)"/>
+                            <rect x="168" y="221" width="72" height="4" rx="2" fill="#a855f7"/>
+
+                            <!-- 总数标签 -->
+                            <rect x="110" y="10" width="100" height="26" rx="13" fill="rgba(255,255,255,.3)"/>
+                            <text x="160" y="28" text-anchor="middle" font-size="12" font-weight="bold" fill="white">500+ 精品课程</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第3张：AI智能计划 — AI大脑+路径图 -->
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <h2>🤖 智能学习计划</h2>
+                        <p>AI驱动，为你定制专属学习方案</p>
+                        <a href="plan.html" class="btn btn-primary">制定计划 →</a>
+                    </div>
+                    <div class="slide-illustration">
+                        <!-- AI + 学习路径图 -->
+                        <svg width="320" height="260" viewBox="0 0 320 260">
+                            <circle cx="160" cy="130" r="120" fill="rgba(255,255,255,.08)"/>
+                            <!-- AI 核心圆 -->
+                            <circle cx="160" cy="120" r="46" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.5)" stroke-width="2"/>
+                            <circle cx="160" cy="120" r="32" fill="rgba(255,255,255,.25)"/>
+                            <!-- AI 文字 -->
+                            <text x="160" y="113" text-anchor="middle" font-size="16" font-weight="bold" fill="white">AI</text>
+                            <text x="160" y="133" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.85)">智能分析</text>
+                            <!-- 放射线 -->
+                            <line x1="160" y1="74" x2="160" y2="50" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-dasharray="3,2"/>
+                            <line x1="192" y1="88" x2="210" y2="72" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-dasharray="3,2"/>
+                            <line x1="206" y1="120" x2="232" y2="120" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-dasharray="3,2"/>
+                            <line x1="192" y1="152" x2="210" y2="170" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-dasharray="3,2"/>
+                            <line x1="160" y1="166" x2="160" y2="192" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-dasharray="3,2"/>
+                            <line x1="128" y1="152" x2="110" y2="170" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-dasharray="3,2"/>
+                            <line x1="114" y1="120" x2="88" y2="120" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-dasharray="3,2"/>
+                            <line x1="128" y1="88" x2="110" y2="72" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-dasharray="3,2"/>
+                            <!-- 技能节点 -->
+                            <!-- 上 -->
+                            <circle cx="160" cy="44" r="14" fill="rgba(255,255,255,.3)"/>
+                            <text x="160" y="49" text-anchor="middle" font-size="12">📝</text>
+                            <!-- 右上 -->
+                            <circle cx="216" cy="66" r="14" fill="rgba(255,255,255,.3)"/>
+                            <text x="216" y="71" text-anchor="middle" font-size="12">💻</text>
+                            <!-- 右 -->
+                            <circle cx="240" cy="120" r="14" fill="rgba(255,255,255,.3)"/>
+                            <text x="240" y="125" text-anchor="middle" font-size="12">⚡</text>
+                            <!-- 右下 -->
+                            <circle cx="216" cy="175" r="14" fill="rgba(255,255,255,.3)"/>
+                            <text x="216" y="180" text-anchor="middle" font-size="12">🎯</text>
+                            <!-- 下 -->
+                            <circle cx="160" cy="198" r="14" fill="rgba(255,255,255,.3)"/>
+                            <text x="160" y="203" text-anchor="middle" font-size="12">🏆</text>
+                            <!-- 左下 -->
+                            <circle cx="104" cy="175" r="14" fill="rgba(255,255,255,.3)"/>
+                            <text x="104" y="180" text-anchor="middle" font-size="12">🎨</text>
+                            <!-- 左 -->
+                            <circle cx="80" cy="120" r="14" fill="rgba(255,255,255,.3)"/>
+                            <text x="80" y="125" text-anchor="middle" font-size="12">🔬</text>
+                            <!-- 左上 -->
+                            <circle cx="104" cy="66" r="14" fill="rgba(255,255,255,.3)"/>
+                            <text x="104" y="71" text-anchor="middle" font-size="12">📊</text>
+                            <!-- 动态点缀 -->
+                            <text x="28" y="50" font-size="16" fill="rgba(255,255,255,.5)">✦</text>
+                            <text x="282" y="50" font-size="12" fill="rgba(255,255,255,.4)">✦</text>
+                            <text x="288" y="195" font-size="16" fill="rgba(255,255,255,.4)">✦</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="slider-controls">
+            <button class="prev" id="prevBtn">‹</button>
+            <button class="next" id="nextBtn">›</button>
+        </div>
+        <div class="slider-dots" id="sliderDots"></div>
+    </section>
+
+    <!-- 特色功能 -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">平台特色</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>丰富课程</h3>
+                    <p>涵盖前端、后端、设计、人工智能等热门技术领域，满足不同学习需求</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>智能规划</h3>
+                    <p>根据个人基础和目标，AI智能推荐学习路径，高效提升技能</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>实战项目</h3>
+                    <p>理论结合实践，通过真实项目案例，快速掌握实用技能</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>社区交流</h3>
+                    <p>加入学习社区，与志同道合的伙伴一起学习成长</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 热门课程 -->
+    <section class="popular-courses">
+        <div class="container">
+            <h2 class="section-title">热门课程推荐</h2>
+            <div class="course-grid">
+                <!-- 课程卡片1：Web前端 -->
+                <div class="course-card">
+                    <div class="course-image" style="background:linear-gradient(135deg,#667eea,#764ba2);position:relative;overflow:hidden">
+                        <svg width="100%" height="100%" viewBox="0 0 280 160" preserveAspectRatio="xMidYMid meet" style="position:absolute;inset:0">
+                            <!-- 浏览器窗口 -->
+                            <rect x="30" y="18" width="220" height="130" rx="10" fill="rgba(255,255,255,.18)"/>
+                            <rect x="30" y="18" width="220" height="28" rx="10" fill="rgba(255,255,255,.3)"/>
+                            <!-- 控制按钮 -->
+                            <circle cx="50" cy="32" r="5" fill="#ff6b6b"/>
+                            <circle cx="64" cy="32" r="5" fill="#ffd166"/>
+                            <circle cx="78" cy="32" r="5" fill="#06d6a0"/>
+                            <!-- 地址栏 -->
+                            <rect x="92" y="26" width="140" height="12" rx="6" fill="rgba(255,255,255,.3)"/>
+                            <text x="100" y="35" font-size="7" fill="rgba(255,255,255,.8)">https://smartlearn.com</text>
+                            <!-- 代码内容 -->
+                            <rect x="42" y="54" width="38" height="80" rx="2" fill="rgba(0,0,50,.2)"/>
+                            <rect x="45" y="59" width="25" height="3" rx="1" fill="#a0e9ff"/>
+                            <rect x="45" y="66" width="18" height="3" rx="1" fill="#ffd166"/>
+                            <rect x="45" y="73" width="30" height="3" rx="1" fill="#a0e9ff"/>
+                            <rect x="45" y="80" width="20" height="3" rx="1" fill="#ff9a9e"/>
+                            <rect x="45" y="87" width="28" height="3" rx="1" fill="rgba(255,255,255,.5)"/>
+                            <rect x="45" y="94" width="15" height="3" rx="1" fill="#ffd166"/>
+                            <!-- 设计画布 -->
+                            <rect x="88" y="54" width="148" height="80" rx="4" fill="rgba(255,255,255,.12)"/>
+                            <!-- 页面布局模拟 -->
+                            <rect x="94" y="60" width="136" height="20" rx="3" fill="rgba(255,255,255,.25)"/>
+                            <rect x="94" y="86" width="60" height="42" rx="3" fill="rgba(255,255,255,.15)"/>
+                            <rect x="160" y="86" width="70" height="42" rx="3" fill="rgba(255,255,255,.15)"/>
+                            <text x="97" y="74" font-size="8" font-weight="bold" fill="white">WEB 前端开发</text>
+                            <!-- 装饰点 -->
+                            <circle cx="248" cy="26" r="10" fill="rgba(255,255,255,.15)"/>
+                            <text x="248" y="30" text-anchor="middle" font-size="10">🌐</text>
+                        </svg>
+                    </div>
+                    <div class="course-info">
+                        <h3>Web前端开发全栈课程</h3>
+                        <p class="course-desc">从HTML/CSS基础到Vue/React框架，全面掌握前端开发技能</p>
+                        <div class="course-meta">
+                            <span class="course-level">初级-高级</span>
+                            <span class="course-students">👥 12,580人学习</span>
+                        </div>
+                        <a href="courses.html" class="btn btn-secondary">查看详情 →</a>
+                    </div>
+                </div>
+
+                <!-- 课程卡片2：Python数据分析 -->
+                <div class="course-card">
+                    <div class="course-image" style="background:linear-gradient(135deg,#f093fb,#f5576c);position:relative;overflow:hidden">
+                        <svg width="100%" height="100%" viewBox="0 0 280 160" preserveAspectRatio="xMidYMid meet" style="position:absolute;inset:0">
+                            <!-- 终端/命令行窗口 -->
+                            <rect x="30" y="22" width="220" height="120" rx="8" fill="rgba(0,0,20,.35)"/>
+                            <rect x="30" y="22" width="220" height="22" rx="8" fill="rgba(0,0,20,.4)"/>
+                            <circle cx="46" cy="33" r="4" fill="#ff6b6b"/>
+                            <circle cx="58" cy="33" r="4" fill="#ffd166"/>
+                            <circle cx="70" cy="33" r="4" fill="#06d6a0"/>
+                            <text x="90" y="37" font-size="8" fill="rgba(255,255,255,.6)">Python Terminal</text>
+                            <!-- 代码行 -->
+                            <text x="40" y="58" font-size="8" font-family="monospace" fill="#06d6a0">>>> import pandas as pd</text>
+                            <text x="40" y="70" font-size="8" font-family="monospace" fill="#06d6a0">>>> import numpy as np</text>
+                            <text x="40" y="82" font-size="8" font-family="monospace" fill="rgba(255,255,255,.7)">>>> df = pd.read_csv('data')</text>
+                            <text x="40" y="94" font-size="8" font-family="monospace" fill="#a0e9ff">>>> df.describe()</text>
+                            <!-- 数据图表小图 -->
+                            <rect x="180" y="55" width="58" height="75" rx="4" fill="rgba(255,255,255,.1)"/>
+                            <!-- 柱状图 -->
+                            <rect x="188" y="96" width="8" height="26" rx="2" fill="#ffd166" opacity=".8"/>
+                            <rect x="200" y="86" width="8" height="36" rx="2" fill="#a0e9ff" opacity=".8"/>
+                            <rect x="212" y="78" width="8" height="44" rx="2" fill="#06d6a0" opacity=".8"/>
+                            <rect x="224" y="90" width="8" height="32" rx="2" fill="#ff6b6b" opacity=".8"/>
+                            <line x1="185" y1="124" x2="235" y2="124" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+                            <!-- 蛇形标志 -->
+                            <text x="40" y="115" font-size="8" font-family="monospace" fill="#ffd166">>>> 🐍 Python 数据分析</text>
+                            <text x="40" y="128" font-size="8" font-family="monospace" fill="rgba(255,255,255,.4)">分析完成 ✓</text>
+                        </svg>
+                    </div>
+                    <div class="course-info">
+                        <h3>Python数据分析与AI</h3>
+                        <p class="course-desc">学习Python编程，掌握数据分析和机器学习核心技术</p>
+                        <div class="course-meta">
+                            <span class="course-level">中级</span>
+                            <span class="course-students">👥 9,234人学习</span>
+                        </div>
+                        <a href="courses.html" class="btn btn-secondary">查看详情 →</a>
+                    </div>
+                </div>
+
+                <!-- 课程卡片3：UI/UX设计 -->
+                <div class="course-card">
+                    <div class="course-image" style="background:linear-gradient(135deg,#4facfe,#00f2fe);position:relative;overflow:hidden">
+                        <svg width="100%" height="100%" viewBox="0 0 280 160" preserveAspectRatio="xMidYMid meet" style="position:absolute;inset:0">
+                            <!-- 设计稿画板 -->
+                            <rect x="28" y="20" width="145" height="125" rx="8" fill="rgba(255,255,255,.2)"/>
+                            <!-- 设计稿内容 -->
+                            <rect x="36" y="30" width="129" height="60" rx="4" fill="rgba(255,255,255,.25)"/>
+                            <!-- 模拟手机UI框 -->
+                            <rect x="50" y="34" width="44" height="50" rx="6" fill="rgba(0,30,80,.25)"/>
+                            <rect x="54" y="40" width="36" height="24" rx="2" fill="rgba(255,255,255,.3)"/>
+                            <rect x="54" y="68" width="20" height="4" rx="2" fill="rgba(255,255,255,.5)"/>
+                            <rect x="54" y="75" width="36" height="4" rx="2" fill="rgba(255,255,255,.3)"/>
+                            <!-- 文字稿线 -->
+                            <rect x="102" y="36" width="54" height="4" rx="2" fill="rgba(255,255,255,.6)"/>
+                            <rect x="102" y="44" width="40" height="3" rx="2" fill="rgba(255,255,255,.4)"/>
+                            <rect x="102" y="51" width="50" height="3" rx="2" fill="rgba(255,255,255,.4)"/>
+                            <rect x="102" y="68" width="35" height="10" rx="4" fill="rgba(255,255,255,.35)"/>
+                            <text x="119" y="77" text-anchor="middle" font-size="7" fill="white">设计稿</text>
+                            <!-- 标注线 -->
+                            <line x1="96" y1="34" x2="96" y2="84" stroke="rgba(255,255,255,.35)" stroke-width="1" stroke-dasharray="3,2"/>
+                            <!-- 颜色样本行 -->
+                            <rect x="36" y="96" width="129" height="12" rx="2" fill="rgba(255,255,255,.1)"/>
+                            <circle cx="48" cy="102" r="5" fill="#667eea"/>
+                            <circle cx="62" cy="102" r="5" fill="#f093fb"/>
+                            <circle cx="76" cy="102" r="5" fill="#ffd166"/>
+                            <circle cx="90" cy="102" r="5" fill="#06d6a0"/>
+                            <circle cx="104" cy="102" r="5" fill="#ff6b6b"/>
+                            <text x="120" y="106" font-size="7" fill="rgba(255,255,255,.7)">色彩方案</text>
+                            <!-- 文字标注 -->
+                            <rect x="36" y="112" width="129" height="26" rx="4" fill="rgba(255,255,255,.1)"/>
+                            <text x="44" y="122" font-size="7" fill="rgba(255,255,255,.8)">字体: Aa 标题 / 正文</text>
+                            <text x="44" y="132" font-size="7" fill="rgba(255,255,255,.6)">网格: 8px 基础栅格系统</text>
+                            <!-- 调色板/画笔 工具区 -->
+                            <rect x="182" y="20" width="70" height="125" rx="8" fill="rgba(255,255,255,.15)"/>
+                            <text x="217" y="38" text-anchor="middle" font-size="9" font-weight="bold" fill="white">工具</text>
+                            <text x="217" y="58" text-anchor="middle" font-size="14">🖌️</text>
+                            <text x="217" y="78" text-anchor="middle" font-size="14">✏️</text>
+                            <text x="217" y="98" text-anchor="middle" font-size="14">🔲</text>
+                            <text x="217" y="118" text-anchor="middle" font-size="14">🎨</text>
+                            <text x="217" y="138" text-anchor="middle" font-size="14">👁️</text>
+                        </svg>
+                    </div>
+                    <div class="course-info">
+                        <h3>UI/UX设计实战</h3>
+                        <p class="course-desc">从设计原则到工具实操，打造专业级用户体验设计作品</p>
+                        <div class="course-meta">
+                            <span class="course-level">初级-中级</span>
+                            <span class="course-students">👥 7,891人学习</span>
+                        </div>
+                        <a href="courses.html" class="btn btn-secondary">查看详情 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学习数据统计 -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="50000">0</h3>
+                    <p>注册用户</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="500">0</h3>
+                    <p>精品课程</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="150">0</h3>
+                    <p>专业导师</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="95">0</h3>
+                    <p>满意度%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>智慧学习平台</h3>
+                    <p>致力于打造最优质的在线学习体验，帮助每个人实现学习目标，提升职业竞争力。</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="courses.html">课程中心</a></li>
+                        <li><a href="plan.html">学习计划</a></li>
+                        <li><a href="resources.html">学习资源</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>📧 info@smartlearn.com</li>
+                        <li>📱 400-888-8888</li>
+                        <li>📍 北京市朝阳区科技园</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>关注我们</h4>
+                    <div class="social-links">
+                        <a href="#" title="微信">WeChat</a>
+                        <a href="#" title="微博">Weibo</a>
+                        <a href="#" title="B站">Bilibili</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 智慧学习平台 版权所有 | 京ICP备12345678号 | 网站地图 | 隐私政策</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
