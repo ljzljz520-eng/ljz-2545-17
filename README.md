@@ -2,11 +2,11 @@
 
 ![项目状态](https://img.shields.io/badge/状态-完成-success)
 ![技术栈](https://img.shields.io/badge/技术栈-HTML5%20%7C%20CSS3%20%7C%20JavaScript-blue)
-![页面数量](https://img.shields.io/badge/页面-7个-orange)
+![页面数量](https://img.shields.io/badge/页面-8个-orange)
 
 ## 📖 项目简介
 
-智慧学习平台是一个功能完善、设计现代化的在线学习网站。项目采用纯前端技术栈（HTML5 + CSS3 + JavaScript）开发，包含首页、课程中心、学习计划、学习资源、个人中心、关于我们、联系我们等7个主要页面，实现了轮播图、表单验证、动态筛选等多种交互效果。
+智慧学习平台是一个功能完善、设计现代化的在线学习网站。项目采用纯前端技术栈（HTML5 + CSS3 + JavaScript）开发，包含首页、课程中心、学习计划、学习资源、个人中心、关于我们、联系我们、素材授权台等8个主要页面，实现了轮播图、表单验证、动态筛选等多种交互效果。
 
 ## ✨ 项目特色
 
@@ -39,12 +39,21 @@ label-2545/
 ├── about.html             # 关于我们 - 简介、团队、历程
 ├── contact.html           # 联系我们 - 联系方式、表单、FAQ
 ├── demo.html              # 演示页面 - Toast和SVG展示
+├── licenses.html          # 素材授权台 - 授权/依赖/校验/待办/审计控制台
+│
+├── 【授权台后端】
+├── server/
+│   ├── licensing_core.py      # 领域核心：关系库+校验机制+持久任务（SQLite）
+│   ├── licensing_server.py    # HTTP API（Python标准库，无外部依赖）
+│   ├── seed.py                # 演示数据
+│   └── test_acceptance.py     # 13项验收测试
 │
 ├── 【资源文件】
 ├── css/
 │   └── style.css          # 全局样式表（约1200行）
 ├── js/
-│   └── script.js          # 全局JavaScript（约600行）
+│   ├── script.js          # 全局JavaScript（约600行）
+│   └── licenses.js        # 授权台前端逻辑
 │
 ├── 【Docker配置】
 ├── Dockerfile             # Docker镜像配置
@@ -56,7 +65,8 @@ label-2545/
 ├── README.md             # 项目说明（本文件）
 ├── DOCKER.md             # Docker部署完整文档
 ├── QUICKSTART.md         # 快速入门指南
-└── 设计说明书.md          # 详细设计文档
+├── 设计说明书.md          # 详细设计文档
+└── docs/素材授权台设计.md  # 授权台设计说明（校验机制/撤回语义/幂等任务）
 ```
 
 ## 🚀 快速开始
@@ -168,6 +178,21 @@ npx http-server
 - **联系表单**：包含姓名、邮箱、电话、主题、消息（带验证）
 - **FAQ**：6个常见问题（手风琴效果）
 - **地图展示**：公司位置
+
+### 8. 素材授权台（licenses.html）
+- **素材与授权**：登记来源身份；编辑页填写作者、凭证、允许用途；后台维护授权区间
+- **身份分离**：相同文件摘要不共享授权——授权记录与内容去重身份分开存储
+- **依赖关系**：原素材 → 派生裁图 → 正文引用 → 导出物，撤回用途时精确计算受影响引用，不误删有有效许可的独立来源
+- **校验机制**：发布时一次校验 + 访问时持续校验（明确 TTL 缓存：普通页300s/精选页60s）+ 事件驱动失效 + 周期兜底，执行撤下与重新生成
+- **持久提醒**：临期/缺证据提醒由持久任务产生，幂等键保证重试不重复生成待办
+- **事实记录**：已分发的旧下载无法远程收回，仅记录事实，不自动推断法律结论
+
+启动授权台 API：
+```bash
+python3 server/seed.py              # 可选：写入演示数据
+python3 server/licensing_server.py  # http://localhost:8081
+python3 server/test_acceptance.py   # 运行13项验收测试
+```
 
 ## 🎯 功能特性
 

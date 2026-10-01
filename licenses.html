@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>素材授权台 - 智慧学习</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root { --lic-border:#e2e8f0; --lic-muted:#718096; }
+        .lic-wrap { max-width: 1200px; margin: 0 auto; padding: 100px 20px 60px; }
+        .lic-head { margin-bottom: 18px; }
+        .lic-head h1 { font-size: 1.9rem; }
+        .lic-head p { color: var(--lic-muted); margin-top: 6px; }
+        .lic-api { font-size: .85rem; color: var(--lic-muted); margin-top: 8px; }
+        .lic-api input { width: 260px; padding: 4px 8px; border:1px solid var(--lic-border); border-radius:6px; }
+        .lic-tabs { display:flex; flex-wrap:wrap; gap:8px; margin: 18px 0 22px; }
+        .lic-tabs button { padding: 8px 16px; border:1px solid var(--lic-border); background:#fff; border-radius: 20px; cursor:pointer; font-size:.92rem; }
+        .lic-tabs button.active { background: linear-gradient(135deg,#667eea,#764ba2); color:#fff; border-color: transparent; }
+        .lic-panel { display:none; }
+        .lic-panel.active { display:block; }
+        .lic-cards { display:grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap:14px; margin-bottom: 20px; }
+        .lic-card { background:#fff; border:1px solid var(--lic-border); border-radius:12px; padding:16px; }
+        .lic-card .num { font-size:1.8rem; font-weight:700; color:#667eea; }
+        .lic-card .lbl { color:var(--lic-muted); font-size:.85rem; margin-top:4px; }
+        table.lic-table { width:100%; border-collapse:collapse; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,.06); margin-bottom:22px; }
+        .lic-table th, .lic-table td { padding:10px 12px; text-align:left; font-size:.88rem; border-bottom:1px solid var(--lic-border); vertical-align: top; }
+        .lic-table th { background:#f7fafc; color:#4a5568; white-space:nowrap; }
+        .lic-table tr:last-child td { border-bottom:none; }
+        .tag { display:inline-block; padding:2px 9px; border-radius:12px; font-size:.75rem; margin:1px 2px; }
+        .tag.ok { background:#c6f6d5; color:#276749; } .tag.bad { background:#fed7d7; color:#9b2c2c; }
+        .tag.warn { background:#feebc8; color:#9c4221; } .tag.info { background:#bee3f8; color:#2a4365; }
+        .tag.mute { background:#edf2f7; color:#4a5568; }
+        .btn-s { padding:4px 10px; border:1px solid #cbd5e0; background:#fff; border-radius:6px; cursor:pointer; font-size:.8rem; margin:1px 2px; }
+        .btn-s:hover { background:#edf2f7; } .btn-s.danger { color:#c53030; border-color:#feb2b2; }
+        .btn-s.primary { background:#667eea; color:#fff; border-color:#667eea; }
+        .lic-form { background:#fff; border:1px solid var(--lic-border); border-radius:12px; padding:18px; margin-bottom:22px; }
+        .lic-form h3 { margin-bottom:12px; font-size:1.05rem; }
+        .lic-form .row { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:10px; }
+        .lic-form label { font-size:.82rem; color:#4a5568; display:block; margin-bottom:3px; }
+        .lic-form input[type=text], .lic-form input[type=datetime-local], .lic-form select {
+            padding:7px 10px; border:1px solid var(--lic-border); border-radius:8px; font-size:.88rem; min-width:200px; }
+        .lic-form .checks label { display:inline-flex; align-items:center; gap:4px; margin-right:12px; font-size:.85rem; }
+        .lic-note { background:#ebf4ff; border-left:4px solid #667eea; padding:10px 14px; border-radius:8px; font-size:.85rem; color:#2a4365; margin-bottom:18px; }
+        .lic-warnbox { background:#fffaf0; border-left:4px solid #dd6b20; padding:10px 14px; border-radius:8px; font-size:.85rem; color:#744210; margin-bottom:18px; }
+        .mono { font-family: ui-monospace, Consolas, monospace; font-size:.78rem; color:#4a5568; word-break: break-all; }
+        .lic-sub { color:var(--lic-muted); font-size:.8rem; }
+        #licToast { position:fixed; top:80px; right:24px; z-index:9999; display:none; max-width:420px;
+            padding:12px 18px; border-radius:10px; color:#fff; font-size:.9rem; box-shadow:0 6px 20px rgba(0,0,0,.2); }
+        #licToast.ok { background:#38a169; } #licToast.err { background:#e53e3e; }
+        details.lic-lic { margin:6px 0; border:1px dashed var(--lic-border); border-radius:8px; padding:8px 10px; }
+        details.lic-lic summary { cursor:pointer; font-size:.85rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand"><h1>智慧学习</h1></div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="courses.html">课程中心</a></li>
+                <li><a href="plan.html">学习计划</a></li>
+                <li><a href="resources.html">学习资源</a></li>
+                <li><a href="profile.html">个人中心</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+                <li><a href="licenses.html" class="active">授权台</a></li>
+            </ul>
+            <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div class="lic-wrap">
+        <div class="lic-head">
+            <h1>🗂️ 素材授权台</h1>
+            <p>管理素材授权（作者 / 凭证 / 允许用途 / 授权区间）、依赖关系（原素材 → 派生裁图 → 正文引用 → 导出物）、撤下与重新生成。</p>
+            <div class="lic-api">API 地址：<input id="apiBase" type="text"> <button class="btn-s" onclick="saveApiBase()">保存</button>
+                <span id="apiState" class="lic-sub"></span></div>
+        </div>
+
+        <div class="lic-note">
+            原则：<b>相同文件摘要不意味着授权相同</b>——授权记录挂在「来源身份」上，与内容去重身份分离；
+            系统只记录事实（区间、凭证、分发次数），<b>不自动推断法律结论</b>。
+        </div>
+
+        <div class="lic-tabs" id="licTabs">
+            <button data-tab="overview" class="active">概览</button>
+            <button data-tab="assets">素材与授权</button>
+            <button data-tab="deps">依赖关系</button>
+            <button data-tab="validate">校验与缓存</button>
+            <button data-tab="exports">导出与 CDN</button>
+            <button data-tab="tasks">待办提醒</button>
+            <button data-tab="audit">审计日志</button>
+        </div>
+
+        <!-- 概览 -->
+        <section class="lic-panel active" id="tab-overview">
+            <div class="lic-cards" id="ovCards"></div>
+            <h3>⚠️ 无法远程收回的已分发内容（事实记录）</h3>
+            <div class="lic-warnbox">以下导出物在受限前已被下载，已分发副本无法通过系统远程收回。此处仅记录事实，是否产生法律后果需人工评估。</div>
+            <div id="unrecoverable"></div>
+        </section>
+
+        <!-- 素材与授权 -->
+        <section class="lic-panel" id="tab-assets">
+            <div class="lic-form">
+                <h3>＋ 登记素材（来源身份）</h3>
+                <div class="row">
+                    <div><label>标题</label><input type="text" id="naTitle" placeholder="湖畔落日·横版"></div>
+                    <div><label>文件摘要（去重身份）</label><input type="text" id="naHash" placeholder="sha256:..."></div>
+                    <div><label>来源</label><input type="text" id="naSource" placeholder="作者直传-张三 / 图库-XX"></div>
+                    <div><label>来源单号/链接</label><input type="text" id="naRef" placeholder="mail-2026-0312"></div>
+                </div>
+                <button class="btn-s primary" onclick="createAsset()">登记</button>
+                <span class="lic-sub">相同摘要的不同来源会生成不同素材记录，授权互不影响。</span>
+            </div>
+            <div id="assetList"></div>
+        </section>
+
+        <!-- 依赖关系 -->
+        <section class="lic-panel" id="tab-deps">
+            <div class="lic-form">
+                <h3>＋ 发布正文引用（发布时一次校验）</h3>
+                <div class="row">
+                    <div><label>页面</label><input type="text" id="nrPage" placeholder="articles/xxx 或 home-featured"></div>
+                    <div><label>页面类型</label><select id="nrKind"><option value="article">普通页</option><option value="featured">精选页</option></select></div>
+                    <div><label>依赖用途</label><select id="nrUse"></select></div>
+                    <div><label>目标类型</label><select id="nrTK"><option value="asset">原素材</option><option value="derivative">派生裁图</option></select></div>
+                    <div><label>目标 ID</label><input type="text" id="nrTid" placeholder="asset-... / deriv-..."></div>
+                </div>
+                <button class="btn-s primary" onclick="publishRef()">校验并发布</button>
+            </div>
+            <div class="lic-form">
+                <h3>＋ 登记派生裁图</h3>
+                <div class="row">
+                    <div><label>原素材 ID</label><input type="text" id="ndParent" placeholder="asset-..."></div>
+                    <div><label>裁图摘要</label><input type="text" id="ndHash" placeholder="sha256:crop..."></div>
+                    <div><label>变换参数</label><input type="text" id="ndTransform" placeholder="crop:1600x900@center"></div>
+                </div>
+                <button class="btn-s primary" onclick="createDerivative()">登记裁图</button>
+            </div>
+            <h3>正文引用</h3>
+            <div id="refList"></div>
+            <h3>派生裁图</h3>
+            <div id="derivList"></div>
+        </section>
+
+        <!-- 校验与缓存 -->
+        <section class="lic-panel" id="tab-validate">
+            <div class="lic-note">
+                组合机制：<b>发布时一次校验</b>（同步、拒绝不合格发布）＋ <b>访问时持续校验</b>（带明确 TTL 的缓存：
+                普通页 300s / 精选页 60s）＋ <b>事件驱动失效</b>（撤回/到期/替图立即清缓存，不等 TTL）＋
+                <b>周期兜底</b>（sweeper 扫描到期授权）。
+            </div>
+            <div class="lic-form">
+                <h3>访问时校验（渲染页面）</h3>
+                <div class="row">
+                    <div><label>页面 slug</label><input type="text" id="rvPage" placeholder="home-featured"></div>
+                </div>
+                <button class="btn-s primary" onclick="renderPage()">渲染</button>
+                <button class="btn-s" onclick="runSweeper()">运行周期任务（sweeper）</button>
+                <div id="renderOut" style="margin-top:12px"></div>
+            </div>
+            <h3>校验缓存（明确 TTL）</h3>
+            <div id="cacheList"></div>
+        </section>
+
+        <!-- 导出与 CDN -->
+        <section class="lic-panel" id="tab-exports">
+            <div class="lic-form">
+                <h3>＋ 启动导出（记录授权快照；完成时重新校验）</h3>
+                <div class="row">
+                    <div><label>类型</label><select id="neKind"><option value="pdf">PDF</option><option value="zip">ZIP</option><option value="page_snapshot">页面快照</option></select></div>
+                    <div><label>目标类型</label><select id="neTK"><option value="asset">原素材</option><option value="derivative">派生裁图</option></select></div>
+                    <div><label>目标 ID</label><input type="text" id="neTid" placeholder="asset-..."></div>
+                    <div><label>用途</label><select id="neUse"></select></div>
+                </div>
+                <button class="btn-s primary" onclick="startExport()">启动导出</button>
+                <span class="lic-sub">若导出期间授权到期/撤回，完成时将转为「待人工复核」，不会分发。</span>
+            </div>
+            <div id="exportList"></div>
+            <h3>CDN 刷新记录</h3>
+            <div class="lic-warnbox">purge 确认前，旧对象可能仍在 CDN 缓存中；访问层必须自行拦截，不能依赖刷新作为唯一防线。</div>
+            <div id="purgeList"></div>
+        </section>
+
+        <!-- 待办提醒 -->
+        <section class="lic-panel" id="tab-tasks">
+            <div class="lic-note">提醒由持久任务产生；任务带幂等键，sweeper 重试/重启<b>不会重复生成</b>相同待办。</div>
+            <button class="btn-s" onclick="runSweeper()">运行周期任务（可重复点击验证幂等）</button>
+            <div id="taskList" style="margin-top:14px"></div>
+        </section>
+
+        <!-- 审计日志 -->
+        <section class="lic-panel" id="tab-audit">
+            <div class="lic-note">审计只记录事实（谁、何时、什么动作、什么对象），不自动推断法律结论。</div>
+            <div id="auditList"></div>
+        </section>
+    </div>
+
+    <div id="licToast"></div>
+    <script src="js/script.js"></script>
+    <script src="js/licenses.js"></script>
+</body>
+</html>
